@@ -1052,7 +1052,7 @@ namespace BitMiracle.LibTiff.Classic
                         else
                             cp = result[0].ToString();
 
-                        byte[] stringBytes = Latin1Encoding.GetBytes(cp);
+                        byte[] stringBytes = UTF8Encoding.GetBytes(cp);//  Latin1Encoding.GetBytes(cp);
 
                         // If this last character is a '\0' null char
                         if (stringBytes.Length != 0 && stringBytes[stringBytes.Length - 1] == 0)
