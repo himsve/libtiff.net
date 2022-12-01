@@ -395,7 +395,7 @@ namespace BitMiracle.LibTiff.Classic
 
                 bytes = new byte[sizeof(int)];
                 writeInt(l, bytes, 0);
-                cp = Latin1Encoding.GetString(bytes, 0, dir.tdir_count);
+                cp = UTF8Encoding.GetString(bytes, 0, dir.tdir_count);
                 return 1;
             }
             else if (m_header.tiff_version == TIFF_BIGTIFF_VERSION && dir.tdir_count <= 8)
@@ -406,13 +406,13 @@ namespace BitMiracle.LibTiff.Classic
 
                 bytes = new byte[sizeof(ulong)];
                 writeULong(l, bytes, 0);
-                cp = Latin1Encoding.GetString(bytes, 0, dir.tdir_count);
+                cp = UTF8Encoding.GetString(bytes, 0, dir.tdir_count);
                 return 1;
             }
 
             bytes = new byte[dir.tdir_count];
             int res = fetchData(dir, bytes);
-            cp = Latin1Encoding.GetString(bytes, 0, dir.tdir_count);
+            cp = UTF8Encoding.GetString(bytes, 0, dir.tdir_count);
             return res;
         }
 

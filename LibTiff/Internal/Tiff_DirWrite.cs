@@ -1052,7 +1052,7 @@ namespace BitMiracle.LibTiff.Classic
                         else
                             cp = result[0].ToString();
 
-                        byte[] stringBytes = UTF8Encoding.GetBytes(cp);//  Latin1Encoding.GetBytes(cp);
+                        byte[] stringBytes = UTF8Encoding.GetBytes(cp);
 
                         // If this last character is a '\0' null char
                         if (stringBytes.Length != 0 && stringBytes[stringBytes.Length - 1] == 0)
@@ -1672,7 +1672,7 @@ namespace BitMiracle.LibTiff.Classic
         {
             dir.tdir_tag = TiffTag.INKNAMES;
             dir.tdir_type = TiffType.ASCII;
-            byte[] bytes = Latin1Encoding.GetBytes(m_dir.td_inknames);
+            byte[] bytes = UTF8Encoding.GetBytes(m_dir.td_inknames);
             dir.tdir_count = bytes.Length;
             return writeByteArray(ref dir, bytes);
         }

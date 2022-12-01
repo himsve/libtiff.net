@@ -45,7 +45,7 @@ namespace BitMiracle.LibTiff.Classic
         /// </summary>
         internal const bool CHECK_JPEG_YCBCR_SUBSAMPLING = true;
 
-        internal static readonly Encoding Latin1Encoding = Encoding.GetEncoding("Latin1");
+        //internal static readonly Encoding Latin1Encoding = Encoding.GetEncoding("Latin1");
         internal static readonly Encoding UTF8Encoding = Encoding.UTF8;
 
         internal enum PostDecodeMethodType
